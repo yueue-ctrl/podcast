@@ -1,0 +1,57 @@
+.episode-detail-main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.episode-header {
+    display: flex;
+    align-items: flex-end;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.episode-detail-poster {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+}
+
+.episode-title-meta h1 {
+    font-size: 2.8em;
+    font-weight: 900;
+    margin: 0 0 10px 0;
+    line-height: 1.1;
+}
+
+.meta-info {
+    color: #5a5a5a;
+    margin: 0;
+}
+
+.player-container {
+    margin-bottom: 40px;
+}
+
+.show-notes h2 {
+    font-size: 2em;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.show-notes h3 {
+    font-size: 1.5em;
+    font-weight: 700;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+.show-notes p, .show-notes ul {
+    font-size: 1.1em;
+    line-height: 1.7;
+    color: #3a3a3a;
+}
+
+.show-notes ul {
+    padding-left: 20px;
+}
