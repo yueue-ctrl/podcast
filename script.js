@@ -37,4 +37,30 @@ document.addEventListener('DOMContentLoaded', () => {
             sectionObserver.observe(section);
         }
     });
+
+    // Custom Cursor Logic
+    const cursorDot = document.querySelector('.cursor-dot');
+    const interactiveElements = document.querySelectorAll('a, button, .icon-container, .episode-card');
+
+    window.addEventListener('mousemove', e => {
+        cursorDot.style.left = `${e.clientX}px`;
+        cursorDot.style.top = `${e.clientY}px`;
+    });
+
+    interactiveElements.forEach(el => {
+        el.addEventListener('mouseenter', () => {
+            cursorDot.classList.add('hover');
+        });
+        el.addEventListener('mouseleave', () => {
+            cursorDot.classList.remove('hover');
+        });
+    });
+    
+    document.addEventListener('mouseleave', () => {
+        cursorDot.style.opacity = '0';
+    });
+
+    document.addEventListener('mouseenter', () => {
+        cursorDot.style.opacity = '1';
+    });
 });
