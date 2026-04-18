@@ -3,31 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Podcast</title>
+    <title>form｜Podcast</title>
+    <link rel="icon" type="image/png" href="logo.png">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="cursor-dot"></div>
+    <div class="cursor-dot"><span class="cursor-text"></span></div>
     <header>
+        <a href="index.html">
+            <img src="icon.png" alt="Podcast Logo" class="header-logo">
+        </a>
         <nav>
-            <a href="#host">Host</a>
+            <a href="about.html">About</a>
+            <a href="#hosts">Hosts</a>
             <a href="#episodes">Episodes</a>
             <a href="#guests">Guests</a>
         </nav>
     </header>
 
-    <div id="hero">
-        <div class="icon-container">
-                <img src="icon.png" alt="Podcast Icon" class="main-icon">
-            </div>
-    </div>
-
     <main>
-        <section id="host">
-            <h2>About the Host</h2>
-            <div class="host-content">
-                <img src="host.jpg" alt="Host Portrait" class="host-image">
-                <p>John Doe is a curious soul with a passion for untold stories. With over a decade of experience in audio production and a background in journalism, he brings a unique blend of professional polish and genuine warmth to every conversation. When he's not behind the mic, you can find him exploring local coffee shops or hiking in the nearest national park.</p>
+        <!-- Hero Section -->
+        <div id="hero">
+            <div class="icon-container">
+                <img src="icon.png" alt="Podcast Icon" class="main-icon">
+                <span class="quote-text"></span>
+            </div>
+        </div>
+
+        <!-- About Section -->
+        <section id="about" class="reveal">
+            <a href="about.html" class="about-link">
+                <p>form is a design theory podcast that uses minimalism to ask the questions most designers think but never say out loud.</p>
+            </a>
+        </section>
+
+        <!-- Hosts Section -->
+        <section id="hosts" class="reveal">
+            <div class="hosts-container">
+                <div class="host-profile">
+                    <div class="host-image-container">
+                        <img src="images/Paola.jpg" alt="Host Paola Antonelli" class="host-image">
+                    </div>
+                    <div class="host-info">
+                        <h3>Paola Antonelli</h3>
+                    </div>
+                </div>
+                <div class="host-profile">
+                    <div class="host-image-container">
+                        <img src="images/John.png" alt="Host John Maeda" class="host-image">
+                    </div>
+                    <div class="host-info">
+                        <h3>John Maeda</h3>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -91,7 +119,7 @@
     </main>
 
     <footer>
-        <p>&copy; 2026 My Podcast</p>
+        <p>&copy; 2026 form｜Podcast</p>
     </footer>
 
     <script src="script.js"></script>

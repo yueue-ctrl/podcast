@@ -41,12 +41,75 @@ document.addEventListener('DOMContentLoaded', () => {
     // Custom Cursor Logic
     const cursorDot = document.querySelector('.cursor-dot');
     const interactiveElements = document.querySelectorAll('a, button, .icon-container, .episode-card');
+    const iconContainer = document.querySelector('.icon-container');
+    const quoteText = document.querySelector('.quote-text');
+    const quotes = [
+        "Minimalism, sharpened.",
+        "Less, but for whom?",
+        "Design is never neutral."
+    ];
+    let quoteIndex = 0;
+    let isHovering = false;
+    let typewriterTimeout;
+    let typewriterInterval;
 
     window.addEventListener('mousemove', e => {
         cursorDot.style.left = `${e.clientX}px`;
         cursorDot.style.top = `${e.clientY}px`;
     });
 
+    function typewriterEffect(element, text, onComplete) {
+        let i = 0;
+        element.textContent = '';
+        element.style.opacity = '1';
+        element.classList.add('typing');
+
+        if (typewriterInterval) {
+            clearInterval(typewriterInterval);
+        }
+
+        typewriterInterval = setInterval(() => {
+            if (i < text.length) {
+                element.textContent += text.charAt(i);
+                i++;
+            } else {
+                clearInterval(typewriterInterval);
+                element.classList.remove('typing');
+                if (onComplete) onComplete();
+            }
+        }, 80);
+    }
+
+    function playQuoteCarousel() {
+        if (!isHovering) return;
+
+        const currentQuote = quotes[quoteIndex];
+        quoteIndex = (quoteIndex + 1) % quotes.length;
+
+        typewriterEffect(quoteText, currentQuote, () => {
+            // Wait for 1.5 seconds before showing the next quote
+            typewriterTimeout = setTimeout(playQuoteCarousel, 1500);
+        });
+    }
+
+    // Handle quote rotation on icon hover
+    if (iconContainer && quoteText) {
+        iconContainer.addEventListener('mouseenter', () => {
+            isHovering = true;
+            playQuoteCarousel();
+        });
+
+        iconContainer.addEventListener('mouseleave', () => {
+            isHovering = false;
+            clearTimeout(typewriterTimeout);
+            clearInterval(typewriterInterval);
+            quoteText.style.opacity = '0';
+            quoteText.textContent = '';
+            quoteText.classList.remove('typing');
+        });
+    }
+
+    // Standard hover effect for interactive elements
     interactiveElements.forEach(el => {
         el.addEventListener('mouseenter', () => {
             cursorDot.classList.add('hover');
@@ -55,6 +118,23 @@ document.addEventListener('DOMContentLoaded', () => {
             cursorDot.classList.remove('hover');
         });
     });
+
+    // Special hover effect for the about paragraph
+    const aboutP = document.querySelector('#about p');
+    const cursorText = document.querySelector('.cursor-text');
+    const words = ["瞧瞧", "See", "Détail", "More", "見る", "展开", "المزيد", "Más"];
+
+    if (aboutP && cursorText) {
+        aboutP.addEventListener('mouseenter', () => {
+            const randomWord = words[Math.floor(Math.random() * words.length)];
+            cursorText.textContent = randomWord;
+            cursorDot.classList.add('text-active');
+        });
+
+        aboutP.addEventListener('mouseleave', () => {
+            cursorDot.classList.remove('text-active');
+        });
+    }
     
     document.addEventListener('mouseleave', () => {
         cursorDot.style.opacity = '0';
