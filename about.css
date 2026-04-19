@@ -1,20 +1,16 @@
-.about-content {
-    max-width: 800px;
-    margin: 60px auto;
-    padding: 0 20px;
-}
 
-.about-content article p {
+
+main article p {
     font-size: 1.2em;
     line-height: 1.8;
-    margin-bottom: 1.5em;
+    margin-bottom: 0em;
     font-weight: 400;
     color: #3a3a3a;
 }
 
 .about-poster {
     display: block;
-    margin: -120px auto 0;
+    margin: -200px auto 0;
     max-width: 100%;
     height: auto;
 }

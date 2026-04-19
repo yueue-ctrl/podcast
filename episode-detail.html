@@ -15,15 +15,15 @@
             <img src="icon.png" alt="Podcast Logo" class="header-logo">
         </a>
         <nav>
-            <a href="index.html#episodes">Episodes</a>
-            <a href="hosts.html">Hosts & Guests</a>
+            <a href="episode-detail.html">Episodes</a>
+            <a href="hosts.html">Hosts</a>
             <a href="about.html">About</a>
         </nav>
     </header>
 
-    <main class="episode-detail-main">
+    <main>
         <div class="episode-header">
-            <img src="episode1.jpg" alt="Episode 1 Poster" class="episode-detail-poster">
+            <img src="images/episode1.jpg" alt="Episode 1 Poster" class="episode-detail-poster">
             <div class="episode-title-meta">
                 <h1>Episode 1: The Art of Minimalism</h1>
                 <p class="meta-info">Published on April 18, 2026</p>
@@ -55,8 +55,32 @@
         </div>
     </main>
 
+    <section id="more-episodes">
+        <div class="section-header">
+            <h2>More Episodes</h2>
+        </div>
+        <div class="episode-grid">
+            <a href="episode-detail.html" class="episode-card">
+                <img src="images/episode2.jpg" alt="Episode 2 Cover Art" class="episode-image">
+                <div class="episode-info">
+                    <h3>Episode 2: Form Follows Function</h3>
+                    <p>A deep dive into the classic design mantra and its relevance today.</p>
+                </div>
+            </a>
+            <a href="episode-detail.html" class="episode-card">
+                <img src="images/episode3.jpg" alt="Episode 3 Cover Art" class="episode-image">
+                <div class="episode-info">
+                    <h3>Episode 3: The Neutrality of Design</h3>
+                    <p>Is design ever truly neutral? We discuss the hidden ideologies in visual decisions.</p>
+                </div>
+            </a>
+        </div>
+    </section>
+
     <footer>
-        <p>&copy; 2026 My Podcast</p>
+        <p>&copy; 2026 form｜Podcast</p>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>

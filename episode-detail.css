@@ -1,8 +1,4 @@
-.episode-detail-main {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 40px 20px;
-}
+
 
 .episode-header {
     display: flex;
@@ -54,4 +50,21 @@
 
 .show-notes ul {
     padding-left: 20px;
+}
+
+.show-notes li {
+    margin-bottom: 10px;
+}
+
+/* --- More Episodes Section --- */
+#more-episodes {
+    max-width: 1200px; /* Match homepage section width */
+    margin: 80px auto; /* Add space above and below */
+    padding: 0 20px;
+}
+
+#more-episodes .section-header {
+    justify-content: center; /* Center the 'More Episodes' title */
+    text-align: center;
+    margin-bottom: 40px;
 }

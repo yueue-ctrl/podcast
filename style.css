@@ -116,6 +116,42 @@ nav a:hover {
     color: #9a9a9a;
 }
 
+/* --- Episodes Section --- */
+.episode-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+}
+
+.episode-card {
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.3s ease;
+}
+
+.episode-card:hover {
+    transform: translateY(-5px);
+}
+
+.episode-image {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.episode-info h3 {
+    font-size: 1.4em;
+    margin: 0 0 5px 0;
+}
+
+.episode-info p {
+    font-size: 1em;
+    margin: 0;
+    color: #5a5a5a;
+}
+
 #hero {
     display: flex;
     justify-content: center;
@@ -172,7 +208,7 @@ nav a:hover {
 
 
 main {
-    padding: 40px 20px;
+    padding: 40px 160px;
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -255,11 +291,7 @@ main {
     overflow-x: hidden;
 }
 
-.section-header-wrapper {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
+
 
 @keyframes scroll {
     0% {
