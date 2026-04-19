@@ -213,6 +213,12 @@ main {
     margin: 0 auto;
 }
 
+.main-content-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 160px;
+}
+
 .section-header {
     display: flex;
     justify-content: space-between;
@@ -319,9 +325,13 @@ main {
 /* Expanded view for hosts */
 .hosts-container.expanded {
     flex-wrap: wrap; /* Allow items to wrap to the next line */
-    justify-content: center; /* Center the items */
+    justify-content: flex-start; /* Align items to the start */
     animation: none; /* Disable the scroll animation */
-    width: 100%; /* Take up full container width */
+
+    /* Constrain width to match main content */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 160px;
 }
 
 .hosts-container.expanded .host-profile {
