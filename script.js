@@ -2,16 +2,21 @@ document.addEventListener('DOMContentLoaded', () => {
     // Smooth scrolling for navigation links
     document.querySelectorAll('nav a').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
-            e.preventDefault();
+            const href = this.getAttribute('href');
 
-            const targetId = this.getAttribute('href');
-            const targetElement = document.querySelector(targetId);
+            // Check if the link is for a different page or an anchor on the same page
+            if (href.startsWith('#') || (href.startsWith('index.html#') && window.location.pathname.endsWith('index.html'))) {
+                e.preventDefault();
+                const targetId = href.split('#')[1];
+                const targetElement = document.getElementById(targetId);
 
-            if (targetElement) {
-                targetElement.scrollIntoView({
-                    behavior: 'smooth'
-                });
-            }
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            } 
+            // For links to other pages (like about.html), let the default browser action proceed.
         });
     });
 
@@ -199,6 +204,22 @@ document.addEventListener('DOMContentLoaded', () => {
                 cursorDot.classList.remove('text-active');
                 cursorDot.classList.remove('host-style');
             }
+        });
+    }
+
+    // --- Player Hover Logic ---
+    const playerLink = document.querySelector('.player-link');
+    const playerWords = ["branding", "extension"];
+
+    if (playerLink && cursorText) {
+        playerLink.addEventListener('mouseenter', () => {
+            const randomWord = playerWords[Math.floor(Math.random() * playerWords.length)];
+            cursorText.textContent = randomWord;
+            cursorDot.classList.add('text-active');
+        });
+
+        playerLink.addEventListener('mouseleave', () => {
+            cursorDot.classList.remove('text-active');
         });
     }
 });

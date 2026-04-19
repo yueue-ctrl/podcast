@@ -12,12 +12,14 @@
     color: #3a3a3a;
 }
 
-.about-content article p:last-child {
-    font-weight: 700;
-    font-size: 1.4em;
-    text-align: center;
-    margin-top: 40px;
+.about-poster {
+    display: block;
+    margin: -120px auto 0;
+    max-width: 100%;
+    height: auto;
 }
+
+
 
 .about-link {
     text-decoration: none;
