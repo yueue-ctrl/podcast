@@ -14,10 +14,9 @@
             <img src="icon.png" alt="Podcast Logo" class="header-logo">
         </a>
         <nav>
-            <a href="about.html">About</a>
-            <a href="#hosts">Hosts</a>
             <a href="#episodes">Episodes</a>
-            <a href="#guests">Guests</a>
+            <a href="#hosts">Hosts & Guests</a>
+            <a href="about.html">About</a>
         </nav>
     </header>
 
@@ -33,89 +32,92 @@
         <!-- About Section -->
         <section id="about" class="reveal">
             <a href="about.html" class="about-link">
-                <p>form is a design theory podcast that uses minimalism to ask the questions most designers think but never say out loud.</p>
+                <p>FORM is a design theory podcast that uses minimalism to ask the questions most designers think but never say out loud.</p>
             </a>
         </section>
 
-        <!-- Hosts Section -->
+        </section>
+
         <section id="hosts" class="reveal">
-            <div class="hosts-container">
-                <div class="host-profile">
-                    <div class="host-image-container">
-                        <img src="images/Paola.jpg" alt="Host Paola Antonelli" class="host-image">
-                    </div>
-                    <div class="host-info">
-                        <h3>Paola Antonelli</h3>
-                    </div>
-                </div>
-                <div class="host-profile">
-                    <div class="host-image-container">
-                        <img src="images/John.png" alt="Host John Maeda" class="host-image">
-                    </div>
-                    <div class="host-info">
-                        <h3>John Maeda</h3>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="episodes">
             <div class="section-header">
-                <h2>Latest Episodes</h2>
-                <a href="#" class="view-all">View All</a>
+                <a href="hosts.html" class="hosts-title-link"><h2>Hosts & Guests</h2></a>
+                <a href="#" class="view-all-hosts">View All</a>
             </div>
-            <div class="episodes-container">
-                <a href="episode-detail.html" class="episode-card">
-                    <img src="episode1.jpg" alt="Episode 1 Poster" class="episode-poster">
-                    <div class="episode-info">
-                        <h3>Episode 1: The Art of Minimalism</h3>
-                        <p>Exploring how less can be more in design, life, and beyond.</p>
+
+            <div class="hosts-container">
+                <a href="hosts.html#paola" class="host-profile-link">
+                    <div class="host-profile" data-role="Host">
+                        <div class="host-image-container">
+                            <img src="images/Paola.jpg" alt="Host Paola Antonelli" class="host-image">
+                        </div>
+                        <div class="host-info">
+                            <h3>Paola Antonelli</h3>
+                        </div>
                     </div>
                 </a>
-                <a href="episode-detail.html" class="episode-card">
-                    <img src="episode2.jpg" alt="Episode 2 Poster" class="episode-poster">
-                    <div class="episode-info">
-                        <h3>Episode 2: The Future of AI</h3>
-                        <p>A conversation with Dr. Evelyn Reed about the trajectory of artificial intelligence.</p>
+                <a href="hosts.html#john" class="host-profile-link">
+                    <div class="host-profile" data-role="Host">
+                        <div class="host-image-container">
+                            <img src="images/John.png" alt="Host John Maeda" class="host-image">
+                        </div>
+                        <div class="host-info">
+                            <h3>John Maeda</h3>
+                        </div>
                     </div>
                 </a>
-                <a href="episode-detail.html" class="episode-card">
-                    <img src="episode3.jpg" alt="Episode 3 Poster" class="episode-poster">
-                    <div class="episode-info">
-                        <h3>Episode 3: The Power of Storytelling</h3>
-                        <p>How narratives shape our world, with bestselling author Mark Chen.</p>
+                <div class="host-profile" data-role="Guest">
+                    <div class="host-image-container">
+                        <img src="images/stefan.png" alt="Guest Stefan Sagmeister" class="host-image">
                     </div>
-                </a>
-                <a href="episode-detail.html" class="episode-card">
-                    <img src="episode4.jpg" alt="Episode 4 Poster" class="episode-poster">
-                    <div class="episode-info">
-                        <h3>Episode 4: Sustainable Living</h3>
-                        <p>Simple steps to a more eco-friendly lifestyle with activist Sarah Jones.</p>
+                    <div class="host-info">
+                        <h3>Stefan Sagmeister</h3>
                     </div>
-                </a>
+                </div>
+                <div class="host-profile" data-role="Guest">
+                    <div class="host-image-container">
+                        <img src="images/Kengo.webp" alt="Guest Kengo Kuma" class="host-image">
+                    </div>
+                    <div class="host-info">
+                        <h3>Kengo Kuma</h3>
+                    </div>
+                </div>
+                <div class="host-profile" data-role="Guest">
+                    <div class="host-image-container">
+                        <img src="images/jil.png" alt="Guest Jil Sander" class="host-image">
+                    </div>
+                    <div class="host-info">
+                        <h3>Jil Sander</h3>
+                    </div>
+                </div>
+                <div class="host-profile" data-role="Guest">
+                    <div class="host-image-container">
+                        <img src="images/jony.jpg" alt="Guest Jony Ive" class="host-image">
+                    </div>
+                    <div class="host-info">
+                        <h3>Jony Ive</h3>
+                    </div>
+                </div>
+                <div class="host-profile" data-role="Guest">
+                    <div class="host-image-container">
+                        <img src="images/phoebe.png" alt="Guest Phoebe Philo" class="host-image">
+                    </div>
+                    <div class="host-info">
+                        <h3>Phoebe Philo</h3>
+                    </div>
+                </div>
+                <div class="host-profile" data-role="Guest">
+                    <div class="host-image-container">
+                        <img src="images/tadao.jpg" alt="Guest Tadao Ando" class="host-image">
+                    </div>
+                    <div class="host-info">
+                        <h3>Tadao Ando</h3>
+                    </div>
+                </div>
             </div>
+        </section>
         </section>
 
-        <section id="guests">
-            <h2>Featured Guests</h2>
-            <div class="guest-grid">
-                <div class="guest-profile">
-                    <img src="guest1.jpg" alt="Guest 1">
-                    <h4>Dr. Evelyn Reed</h4>
-                    <p>AI Researcher</p>
-                </div>
-                <div class="guest-profile">
-                    <img src="guest2.jpg" alt="Guest 2">
-                    <h4>Mark Chen</h4>
-                    <p>Author</p>
-                </div>
-                <div class="guest-profile">
-                    <img src="guest3.jpg" alt="Guest 3">
-                    <h4>Sarah Jones</h4>
-                    <p>Activist</p>
-                </div>
-            </div>
-        </section>
+
     </main>
 
     <footer>

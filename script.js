@@ -143,4 +143,62 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('mouseenter', () => {
         cursorDot.style.opacity = '1';
     });
+
+    // --- Hosts & Guests Logic ---
+    const hostsContainer = document.querySelector('.hosts-container');
+    const viewAllHosts = document.querySelector('.view-all-hosts');
+    let originalHostsContent = '';
+
+    const setupInfiniteScroll = () => {
+        if (hostsContainer && !hostsContainer.classList.contains('expanded')) {
+            if (originalHostsContent === '') {
+                originalHostsContent = hostsContainer.innerHTML;
+            }
+            hostsContainer.innerHTML = originalHostsContent + originalHostsContent;
+        }
+    };
+
+    setupInfiniteScroll(); // Initial setup
+
+    // Expand/collapse hosts section
+    if (viewAllHosts && hostsContainer) {
+        viewAllHosts.addEventListener('click', (e) => {
+            e.preventDefault();
+            hostsContainer.classList.toggle('expanded');
+
+            if (hostsContainer.classList.contains('expanded')) {
+                viewAllHosts.textContent = 'View Less';
+                hostsContainer.innerHTML = originalHostsContent; // Show original content
+            } else {
+                viewAllHosts.textContent = 'View All';
+                setupInfiniteScroll(); // Re-enable scroll
+            }
+        });
+    }
+
+    // Special hover effect for host profiles
+    const hostProfiles = document.querySelectorAll('.host-profile');
+    if (hostProfiles.length > 0 && cursorText) {
+        hostsContainer.addEventListener('mouseover', (e) => {
+            const profile = e.target.closest('.host-profile');
+            if (profile) {
+                const role = profile.getAttribute('data-role');
+                if (role) {
+                    cursorText.textContent = role;
+                    cursorDot.classList.add('text-active');
+                    if (role === 'Host') {
+                        cursorDot.classList.add('host-style');
+                    }
+                }
+            }
+        });
+
+        hostsContainer.addEventListener('mouseout', (e) => {
+            const profile = e.target.closest('.host-profile');
+            if (profile) {
+                cursorDot.classList.remove('text-active');
+                cursorDot.classList.remove('host-style');
+            }
+        });
+    }
 });

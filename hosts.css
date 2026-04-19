@@ -1,0 +1,43 @@
+/* hosts.css */
+
+#hosts-page {
+    padding: 60px 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.host-detail {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    margin-bottom: 80px;
+}
+
+/* Alternate layout for every other host */
+.host-detail:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.host-image-large-container {
+    flex: 0 0 300px;
+}
+
+.host-image-large {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.host-bio {
+    flex: 1;
+}
+
+.host-bio h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.host-bio p {
+    font-size: 1.2em;
+    line-height: 1.8;
+}

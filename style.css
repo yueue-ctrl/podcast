@@ -76,6 +76,15 @@ button,
     opacity: 1;
 }
 
+/* Style for when showing 'Host' */
+.cursor-dot.text-active.host-style {
+    background-color: #f5f5f5; /* White background */
+}
+
+.cursor-dot.text-active.host-style .cursor-text {
+    color: #1a1a1a; /* Black text */
+}
+
 header {
     position: sticky;
     top: 0;
@@ -186,6 +195,18 @@ main {
     color: #9a9a9a;
 }
 
+.view-all-hosts {
+    color: #1a1a1a;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.hosts-title-link,
+.host-profile-link {
+    text-decoration: none;
+    color: inherit;
+}
+
 .episodes-container {
     display: flex;
     overflow-x: auto;
@@ -228,42 +249,62 @@ main {
     color: #5a5a5a;
 }
 
-.host-image {
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%); /* Scroll by half the width (the original content's width) */
+    }
 }
 
 .hosts-container {
     display: flex;
-    gap: 60px; /* Increased gap between hosts */
+    overflow-x: visible; /* Allow content to overflow for the animation */
+    padding-bottom: 20px;
+    gap: 60px;
     align-items: flex-start;
-    justify-content: center; /* Center the host profiles */
+    width: fit-content; /* Adjust width to content */
+    animation: scroll 40s linear infinite; /* Apply the animation */
+}
+
+.hosts-container:hover {
+    animation-play-state: paused; /* Pause animation on hover */
+}
+
+/* Expanded view for hosts */
+.hosts-container.expanded {
+    flex-wrap: wrap; /* Allow items to wrap to the next line */
+    justify-content: center; /* Center the items */
+    animation: none; /* Disable the scroll animation */
+    width: 100%; /* Take up full container width */
+}
+
+.hosts-container.expanded .host-profile {
+    flex-basis: calc(25% - 60px); /* Adjust for 4 items per row, considering gap */
+    margin-bottom: 40px;
 }
 
 .host-profile {
     display: flex;
-    flex-direction: column; /* Stack image on top of text */
+    flex-direction: column;
     align-items: center;
     text-align: center;
-    flex: 1;
+    flex: 0 0 250px; /* Set a fixed width for each profile */
 }
 
 .host-image-container {
     position: relative;
-    width: 250px; /* Increased size */
-    height: 250px; /* Increased size */
+    width: 250px;
+    height: 250px;
     margin-bottom: 20px;
     overflow: hidden;
-    /* Add box-shadow for the frame and transition it */
-    box-shadow: inset 0 0 0 5px transparent;
-    transition: border-radius 0.4s cubic-bezier(0.77, 0, 0.175, 1), box-shadow 0.4s ease;
+    border-radius: 0; /* Start as a square */
+    transition: border-radius 0.4s cubic-bezier(0.77, 0, 0.175, 1);
 }
 
 .host-profile:hover .host-image-container {
-    border-radius: 50%;
-    /* Make the frame visible on hover */
-    box-shadow: inset 0 0 0 5px #1a1a1a;
+    border-radius: 50%; /* Become a circle on hover */
 }
 
 .host-image {
@@ -277,28 +318,24 @@ main {
     margin: 0;
 }
 
-.guest-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    gap: 30px;
-    text-align: center;
-}
-
-.guest-profile img {
-    width: 120px;
-    height: 120px;
-    object-fit: cover;
-    margin-bottom: 10px;
-}
-
-.guest-profile h4 {
-    margin: 0 0 5px 0;
-    font-size: 1.2em;
-}
-
+/* Remove the guest-grid and related styles as they are now merged */
+.guest-grid,
+.guest-profile,
+.guest-profile img,
+.guest-profile h4,
 .guest-profile p {
-    margin: 0;
-    color: #5a5a5a;
+    display: none;
+}
+
+.about-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.about-link:hover {
+    transform: scale(1.02);
 }
 
 footer {

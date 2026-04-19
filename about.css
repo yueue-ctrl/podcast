@@ -1,0 +1,31 @@
+.about-content {
+    max-width: 800px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.about-content article p {
+    font-size: 1.2em;
+    line-height: 1.8;
+    margin-bottom: 1.5em;
+    font-weight: 400;
+    color: #3a3a3a;
+}
+
+.about-content article p:last-child {
+    font-weight: 700;
+    font-size: 1.4em;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.about-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.about-link:hover {
+    transform: scale(1.02);
+}
